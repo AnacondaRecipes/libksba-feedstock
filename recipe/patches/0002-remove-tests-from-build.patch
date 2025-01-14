@@ -1,0 +1,25 @@
+From 23c39fa611cde90f588714a7ee8e8166704d3ed3 Mon Sep 17 00:00:00 2001
+From: Mohamed Sentissi <msentissi@anaconda.com>
+Date: Tue, 14 Jan 2025 10:59:53 -0500
+Subject: [PATCH] remove tests from build
+
+---
+ Makefile.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile.in b/Makefile.in
+index de0205a..4d204a4 100644
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -406,7 +406,7 @@ EXTRA_DIST = autogen.sh autogen.rc \
+ @CROSS_COMPILING_TRUE@tests = 
+ @BUILD_DOC_FALSE@doc = 
+ @BUILD_DOC_TRUE@doc = doc
+-SUBDIRS = m4 gl src $(tests) $(doc)
++SUBDIRS = m4 gl src $(doc)
+ gen_start_date = 2011-12-01T00:00:00
+ 
+ # Macro to help the release target.
+-- 
+2.45.2
+

@@ -1,15 +1,18 @@
 {% set name = "libksba" %}
 {% set version = "1.6.7" %}
-{% set sha256 = "cf72510b8ebb4eb6693eef765749d83677a03c79291a311040a5bfd79baab763" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://www.gnupg.org/ftp/gcrypt/{{ name }}/{{ name }}-{{ version }}.tar.bz2
-  sha256: {{ sha256 }}
+  sha256: cf72510b8ebb4eb6693eef765749d83677a03c79291a311040a5bfd79baab763
+  patches:
+    # Use distributed header, not the one in the source
+    - patches/0001-fix-include-statement.patch
+    # Prevent make from building the tests during the conda build stage
+    - patches/0002-remove-tests-from-build.patch
 
 build:
   number: 0
@@ -20,15 +23,15 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    - {{ stdlib("c") }}
-    - {{ compiler('cxx') }}
-    - gnuconfig  # [unix]
-    - make  # [unix]
+    - make
   host:
     - libgpg-error
 
 test:
-  commands:
+  requires:
+    - {{ compiler('c') }}
+  source_files:
+    - tests
 
 about:
   home: https://www.gnupg.org/software/libksba/index.html
