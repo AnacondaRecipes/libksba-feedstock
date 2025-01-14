@@ -16,7 +16,8 @@ source:
 
 build:
   number: 0
-  skip: true  # [win]
+  # libgpg-error is unavailable on s390x
+  skip: true  # [win or s390x]
   run_exports:
     - {{ pin_subpackage('libksba', max_pin='x.x') }}
 
@@ -24,6 +25,7 @@ requirements:
   build:
     - {{ compiler('c') }}
     - make
+    - patch
   host:
     - libgpg-error
 
