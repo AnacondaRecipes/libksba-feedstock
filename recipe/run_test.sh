@@ -15,15 +15,11 @@ $CC t-dnparser.c -o t-dnparser $COMP_OPTIONS
 $CC t-oid.c -o t-oid $COMP_OPTIONS
 $CC t-reader.c -o t-reader $COMP_OPTIONS
 # Run tests
-echo "CMS PARSER TEST"
+set -v
 ./t-cms-parser --verbose
 #./t-crl-parser --verbose
-echo "DER BUILDER TEST"
 ./t-der-builder --verbose
-echo "DN PARSER TEST"
 ./t-dnparser --verbose
 #./t-ocsp --verbose
-echo "OID TEST"
 ./t-oid
-echo "READER TEST"
 ./t-reader
