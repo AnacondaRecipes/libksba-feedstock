@@ -44,6 +44,7 @@ about:
   license_family: LGPL
   license_file:
     - COPYING
+    - COPYING.LGPLv3
     - AUTHORS
   description: |
     Libksba is a library to make the tasks of working with X.509 certificates,
