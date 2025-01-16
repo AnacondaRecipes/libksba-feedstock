@@ -38,7 +38,7 @@ test:
 about:
   home: https://www.gnupg.org/software/libksba/index.html
   doc_url: https://www.gnupg.org/software/libksba/index.html
-  dev_url: https://github.com/gpg/libksba/tree/libksba-1.6.7
+  dev_url: https://git.gnupg.org/cgi-bin/gitweb.cgi?p=libksba.git
   summary: Libksba is a library to make the tasks of working with X.509 certificates, CMS data and related objects more easy.
   license: LGPL-3.0-or-later
   license_family: LGPL
