@@ -27,7 +27,7 @@ requirements:
     - make
     - patch
   host:
-    - libgpg-error
+    - libgpg-error >=1.51
 
 test:
   requires:
@@ -45,7 +45,6 @@ about:
   license_file:
     - COPYING
     - COPYING.LGPLv3
-    - AUTHORS
   description: |
     Libksba is a library to make the tasks of working with X.509 certificates,
     CMS data and related objects more easy. It provides a highlevel interface to
