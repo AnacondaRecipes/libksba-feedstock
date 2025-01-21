@@ -1,0 +1,81 @@
+From c32fb150752f4bbb1d186f87b4a3255f99afc6ff Mon Sep 17 00:00:00 2001
+From: Mohamed Sentissi <msentissi@anaconda.com>
+Date: Tue, 14 Jan 2025 10:28:37 -0500
+Subject: [PATCH] fix include statement
+
+---
+ tests/t-cms-parser.c  | 2 +-
+ tests/t-der-builder.c | 2 +-
+ tests/t-dnparser.c    | 2 +-
+ tests/t-oid.c         | 2 +-
+ tests/t-reader.c      | 2 +-
+ 5 files changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/tests/t-cms-parser.c b/tests/t-cms-parser.c
+index 173123b..9b57a8b 100644
+--- a/tests/t-cms-parser.c
++++ b/tests/t-cms-parser.c
+@@ -24,7 +24,7 @@
+ #include <time.h>
+ #include <errno.h>
+ 
+-#include "../src/ksba.h"
++#include <ksba.h>
+ 
+ #include "t-common.h"
+ 
+diff --git a/tests/t-der-builder.c b/tests/t-der-builder.c
+index 05b4d60..7e4343a 100644
+--- a/tests/t-der-builder.c
++++ b/tests/t-der-builder.c
+@@ -25,7 +25,7 @@
+ #include <time.h>
+ #include <errno.h>
+ 
+-#include "../src/ksba.h"
++#include <ksba.h>
+ 
+ #define PGM "t-der-builder"
+ 
+diff --git a/tests/t-dnparser.c b/tests/t-dnparser.c
+index ef97456..ed2f2c3 100644
+--- a/tests/t-dnparser.c
++++ b/tests/t-dnparser.c
+@@ -24,7 +24,7 @@
+ #include <time.h>
+ #include <errno.h>
+ 
+-#include "../src/ksba.h"
++#include <ksba.h>
+ #include "t-common.h"
+ 
+ static int quiet;
+diff --git a/tests/t-oid.c b/tests/t-oid.c
+index 04156b6..c2c7ea8 100644
+--- a/tests/t-oid.c
++++ b/tests/t-oid.c
+@@ -25,7 +25,7 @@
+ #include <time.h>
+ #include <errno.h>
+ 
+-#include "../src/ksba.h"
++#include <ksba.h>
+ 
+ #define PGM "t-oid"
+ #define BADOID "1.3.6.1.4.1.11591.2.12242973"
+diff --git a/tests/t-reader.c b/tests/t-reader.c
+index a64ae2e..75f4f7c 100644
+--- a/tests/t-reader.c
++++ b/tests/t-reader.c
+@@ -30,7 +30,7 @@
+ #include <fcntl.h>
+ #include <gpg-error.h>
+ 
+-#include "../src/ksba.h"
++#include <ksba.h>
+ #include "t-common.h"
+ 
+ void
+-- 
+2.45.2
+
